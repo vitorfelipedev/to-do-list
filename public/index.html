@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyTasks</title>
+  <link rel="shortcut icon" href="tasks.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="header-info">
+      <h1>Minhas Tarefas</h1>
+      <p class="header-subtitle">Organiza o teu dia com foco.</p>
+      <p class="header-pending">
+        <span class="number-pendings">3</span> pendentes
+      </p>
+    </div>
+    <!-- Botão para alternar tema -->
+    <button class="btn-toggle-theme" type="button" aria-label="Alternar tema escuro">
+      <img src="../src/assets/icons/dark-mode.svg" alt="Icon of moon">
+    </button>
+  </header>
+  <!-- FORMULÁRIO PARA ADICIONAR NOVA TAREFA -->
+  <section aria-label="Adicionar nova tarefa">
+    <form class="form-new-task" novalidate>
+      <!-- Campo de nome da tarefa -->
+      <div class="form-row">
+        <label for="new-task-name" class="sr-only">Nome da tarefa</label>
+        <input type="text" name="new-task-name" id="new-task-name" placeholder="Nova tarefa..." autocomplete="off" required>
+        <button type="submit" aria-label="Adicionar tarefa">+</button>
+      </div>
+      <!-- Categoria e data -->
+      <div class="form-row">
+        <label for="new-task-category" class="sr-only">Categoria</label>
+        <select name="new-task-category" id="new-task-category">
+          <option value="personal">Pessoal</option>
+          <option value="work">Trabalho</option>
+          <option value="health">Saúde</option>
+          <option value="study">Estudos</option>
+          <option value="finance">Finanças</option>
+        </select>
+        <label for="new-task-date" class="sr-only">Data de vencimento</label>
+        <input type="date" name="new-task-date" id="new-task-date">
+      </div>
+    </form>
+  </section>
+  <!-- LISTA DE TAREFAS -->
+  <section aria-label="Lista de tarefas">
+    <!-- Filtro por status -->
+    <nav class="filter-status" aria-label="Filtrar por status">
+      <button type="button" class="filter-btn active" data-filter="all">Todas</button>
+      <button type="button" class="filter-btn" data-filter="active">Ativas</button>
+      <button type="button" class="filter-btn" data-filter="done">Concluídas</button>
+    </nav>
+    <!-- Filtro por categoria -->
+    <nav class="filter-category" aria-label="Filtrar por categoria">
+      <button type="button" class="filter-btn active" data-category="all">Todas</button>
+      <button type="button" class="filter-btn" data-category="personal">Pessoal</button>
+      <button type="button" class="filter-btn" data-category="work">Trabalho</button>
+      <button type="button" class="filter-btn" data-category="health">Saúde</button>
+      <button type="button" class="filter-btn" data-category="study">Estudos</button>
+      <button type="button" class="filter-btn" data-category="finance">Finanças</button>
+    </nav>
+    <!-- Lista onde as tarefas serão exibidas -->
+    <ul class="task-list" role="list" aria-label="Tarefas">
+      <!-- ITEM DE TAREFA (modelo/template) -->
+      <li class="task-item" draggable="true">
+        <!-- Checkbox de conclusão -->
+        <label class="task-checkbox-label">
+          <input class="task-checkbox" type="checkbox" name="completed">
+          <span class="task-checkbox-custom" aria-hidden="true"></span>
+        </label>
+        <!-- Conteúdo da tarefa -->
+        <div class="task-content">
+          <span class="task-name">Nome da tarefa exemplo</span>
+          <div class="task-meta">
+            <span class="task-category">Estudos</span>
+            <span class="task-date" data-date="">12/06/2025</span>
+          </div>
+        </div>
+        <!-- Ações da tarefa -->
+        <div class="task-actions">
+          <button type="button" class="btn-edit" aria-label="Editar tarefa"><img src="../src/assets/icons/edit.svg" alt="Icon of edit"></button>
+          <button type="button" class="btn-delete" aria-label="Excluir tarefa"><img src="../src/assets/icons/delete.svg" alt="Icon of delete"></button>
+        </div>
+      </li>
+    </ul>
+    <!-- RODAPÉ DA LISTA -->
+    <footer class="list-footer">
+      <p class="task-count">
+        <span class="qtde-task-completed">0</span> de
+        <span class="qtde-task-total">1</span> concluídas
+      </p>
+      <!-- Botão para limpar tarefas concluídas -->
+      <button type="button" class="btn-clear-done">Limpar concluídas</button>
+    </footer>
+  </section>
+  <!-- Script JavaScript -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
