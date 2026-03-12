@@ -54,7 +54,7 @@
   --transition-slow: 0.3s ease;
 }
 
-[data-theme='dark'] {
+.dark-mode {
   --color-bg: #0f0f13;
   --color-surface: #1a1a22;
   --color-surface-alt: #22222e;
@@ -109,7 +109,7 @@ body {
   background-color: var(--color-bg);
   line-height: 1.6;
   min-height: 100vh;
-  padding-bottom: 3.75rem; /* 60px */
+  padding-bottom: 3.75rem;
   transition:
     background-color var(--transition-slow),
     color var(--transition-slow);
@@ -117,7 +117,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 40rem; /* 640px */
+  max-width: 40rem;
   margin: 0 auto;
   padding: 0 var(--space-10);
 }
