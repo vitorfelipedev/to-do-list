@@ -1,0 +1,123 @@
+:root {
+  /* Cores */
+  --color-bg: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0ede8;
+  --color-border: #e8e5df;
+  --color-text: #1a1825;
+  --color-text-muted: #9b96a8;
+  --color-accent: #6366f1;
+  --color-accent-hover: #4f46e5;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Categorias */
+  --color-personal: #6366f1;
+  --color-work: #f59e0b;
+  --color-health: #10b981;
+  --color-study: #3b82f6;
+  --color-finance: #ec4899;
+
+  /* Tipografia */
+  --font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-size-xs: 0.6875rem; /* 11px */
+  --font-size-sm: 0.8125rem; /* 13px */
+  --font-size-base: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.375rem; /* 22px */
+  --font-size-xl: 1.75rem; /* 28px */
+
+  /* Espaçamento (escala 4px) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+
+  /* Bordas */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.06);
+
+  /* Transições */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0f0f13;
+  --color-surface: #1a1a22;
+  --color-surface-alt: #22222e;
+  --color-border: #2a2a38;
+  --color-text: #e8e4f0;
+  --color-text-muted: #6b6880;
+  --shadow-sm: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul[role='list'] {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+span {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 3.75rem; /* 60px */
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow);
+}
+
+.container {
+  width: 100%;
+  max-width: 40rem; /* 640px */
+  margin: 0 auto;
+  padding: 0 var(--space-10);
+}

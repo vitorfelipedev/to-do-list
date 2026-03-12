@@ -1,0 +1,72 @@
+.form-new-task {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition:
+    background var(--transition-slow),
+    border-color var(--transition-slow);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.form-new-task input,
+.form-new-task select {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-slow);
+}
+
+.form-new-task input:focus,
+.form-new-task select:focus {
+  border-color: var(--color-accent);
+}
+
+.form-new-task input::placeholder {
+  color: var(--color-text-muted);
+}
+
+#new-task-name {
+  flex: 1;
+}
+
+#new-task-category,
+#new-task-date {
+  flex: 1;
+  min-width: 8.125rem;
+  cursor: pointer;
+}
+
+.form-new-task button[type='submit'] {
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition-base);
+}
+
+.form-new-task button[type='submit']:hover {
+  background: var(--color-accent-hover);
+}
