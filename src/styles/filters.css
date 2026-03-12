@@ -1,0 +1,93 @@
+.filter-status {
+  display: flex;
+  gap: var(--space-1);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-1);
+  margin-bottom: var(--space-4);
+  transition: background var(--transition-slow);
+}
+
+.filter-status .filter-btn {
+  flex: 1;
+  padding: 0.4375rem 0;
+  border-radius: var(--radius-md);
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.filter-status .filter-btn.active {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-category {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.filter-category .filter-btn {
+  padding: 0.3125rem var(--space-3); /* 5px */
+  border-radius: var(--radius-full);
+  border: 0.09375rem solid var(--color-border); /* 1.5px */
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.filter-category .filter-btn[data-category='all'].active,
+.filter-category .filter-btn[data-category='personal'].active,
+.filter-category .filter-btn[data-category='work'].active,
+.filter-category .filter-btn[data-category='health'].active,
+.filter-category .filter-btn[data-category='study'].active,
+.filter-category .filter-btn[data-category='finance'].active {
+  color: #ffffff;
+}
+
+.filter-category .filter-btn[data-category='all'].active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.filter-category .filter-btn[data-category='personal'].active {
+  background: var(--color-personal);
+  border-color: var(--color-personal);
+}
+
+.filter-category .filter-btn[data-category='work'].active {
+  background: var(--color-work);
+  border-color: var(--color-work);
+}
+
+.filter-category .filter-btn[data-category='health'].active {
+  background: var(--color-health);
+  border-color: var(--color-health);
+}
+
+.filter-category .filter-btn[data-category='study'].active {
+  background: var(--color-study);
+  border-color: var(--color-study);
+}
+
+.filter-category .filter-btn[data-category='finance'].active {
+  background: var(--color-finance);
+  border-color: var(--color-finance);
+}
