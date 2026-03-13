@@ -70,3 +70,9 @@
 .form-new-task button[type='submit']:hover {
   background: var(--color-accent-hover);
 }
+
+.error-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  margin-top: var(--space-1);
+}
