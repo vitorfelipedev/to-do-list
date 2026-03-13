@@ -1,7 +1,7 @@
 import { getTasks } from '../services/storage.js';
 import { createTaskList } from './taskList.js';
 
-export function createFilters() {
+export function initFilters() {
   const events = ['click', 'touchstart'];
   const filterStatus = document.querySelectorAll('.filter-status .filter-btn');
   const filterCategory = document.querySelectorAll(
