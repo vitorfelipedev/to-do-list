@@ -1,3 +1,6 @@
+import { getCategoryLabel } from '../utils/categories.js';
+import { initTaskActions } from './taskActions.js';
+
 export function createTaskItem(task) {
   const li = document.createElement('li');
   li.classList.add('task-item');
@@ -29,7 +32,8 @@ export function createTaskItem(task) {
   const contentCategory = document.createElement('span');
   contentCategory.classList.add('task-category');
   contentCategory.setAttribute('data-category', task.category);
-  contentCategory.textContent = task.category;
+  contentCategory.textContent = getCategoryLabel(task.category);
+  task.category;
   const contentDate = document.createElement('span');
   if (task.dueDate) {
     contentDate.classList.add('task-date');
@@ -68,5 +72,6 @@ export function createTaskItem(task) {
   li.appendChild(content);
   li.appendChild(actions);
 
+  initTaskActions(li, task);
   return li;
 }
