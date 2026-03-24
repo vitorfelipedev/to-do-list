@@ -1,3 +1,4 @@
+import { getTasks, saveTasks } from '../services/storage.js';
 import { counterPendings } from '../utils/counter.js';
 import { createTaskItem } from './taskItem.js';
 
@@ -29,4 +30,18 @@ export function createTaskList(
   });
 
   counterPendings();
+}
+
+export function initClearDone() {
+  const events = ['click', 'touchstart'];
+  const btn = document.querySelector('.btn-clear-done');
+  events.forEach((event) => {
+    btn.addEventListener(event, (e) => {
+      e.preventDefault();
+      const tasks = getTasks();
+      const updated = tasks.filter((t) => !t.done);
+      saveTasks(updated);
+      createTaskList(updated);
+    });
+  });
 }
