@@ -1,5 +1,6 @@
 import { getCategoryLabel } from '../utils/categories.js';
 import { formatDate, isDueToday, isOverdue } from '../utils/date.js';
+import { initDragDrop } from '../utils/dragDrop.js';
 import { initTaskActions } from './taskActions.js';
 
 export function createTaskItem(task) {
@@ -79,5 +80,6 @@ export function createTaskItem(task) {
   li.appendChild(actions);
 
   initTaskActions(li, task);
+  initDragDrop(li, task.id);
   return li;
 }
