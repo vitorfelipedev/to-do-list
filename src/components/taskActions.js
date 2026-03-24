@@ -1,4 +1,5 @@
 import { getTasks, saveTasks } from '../services/storage.js';
+import { counterPendings } from '../utils/counter.js';
 import { createTaskList } from './taskList.js';
 
 export function initTaskActions(li, task) {
@@ -25,6 +26,7 @@ export function initTaskActions(li, task) {
     const updated = tasks.filter((t) => t.id !== id);
     saveTasks(updated);
     li.remove();
+    counterPendings();
   }
 
   function editTask(e) {
