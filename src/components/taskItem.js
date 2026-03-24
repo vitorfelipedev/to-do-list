@@ -1,4 +1,5 @@
 import { getCategoryLabel } from '../utils/categories.js';
+import { formatDate, isDueToday, isOverdue } from '../utils/date.js';
 import { initTaskActions } from './taskActions.js';
 
 export function createTaskItem(task) {
@@ -38,7 +39,12 @@ export function createTaskItem(task) {
   if (task.dueDate) {
     contentDate.classList.add('task-date');
     contentDate.setAttribute('data-date', task.dueDate);
-    contentDate.textContent = task.dueDate;
+    contentDate.textContent = formatDate(task.dueDate);
+    if (isOverdue(task.dueDate)) {
+      contentDate.classList.add('overdue');
+    } else if (isDueToday(task.dueDate)) {
+      contentDate.classList.add('due-today');
+    }
   }
   contentMeta.appendChild(contentCategory);
   contentMeta.appendChild(contentDate);
