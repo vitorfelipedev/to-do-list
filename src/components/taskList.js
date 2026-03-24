@@ -1,3 +1,4 @@
+import { counterPendings } from '../utils/counter.js';
 import { createTaskItem } from './taskItem.js';
 
 export function createTaskList(
@@ -26,4 +27,6 @@ export function createTaskList(
   tasksFilter.forEach((task) => {
     list.appendChild(createTaskItem(task));
   });
+
+  counterPendings();
 }
