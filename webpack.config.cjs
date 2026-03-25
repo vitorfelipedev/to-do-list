@@ -20,6 +20,13 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/icons/[name][ext]',
+        },
+      },
     ],
   },
 };

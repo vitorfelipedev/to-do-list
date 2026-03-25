@@ -1,3 +1,5 @@
+import editIcon from '../assets/icons/edit.svg';
+import deleteIcon from '../assets/icons/delete.svg';
 import { getCategoryLabel } from '../utils/categories.js';
 import { formatDate, isDueToday, isOverdue } from '../utils/date.js';
 import { initDragDrop } from '../utils/dragDrop.js';
@@ -35,7 +37,6 @@ export function createTaskItem(task) {
   contentCategory.classList.add('task-category');
   contentCategory.setAttribute('data-category', task.category);
   contentCategory.textContent = getCategoryLabel(task.category);
-  task.category;
   const contentDate = document.createElement('span');
   if (task.dueDate) {
     contentDate.classList.add('task-date');
@@ -54,12 +55,13 @@ export function createTaskItem(task) {
 
   const actions = document.createElement('div');
   actions.classList.add('task-actions');
+
   const btnEdit = document.createElement('button');
   btnEdit.type = 'button';
   btnEdit.classList.add('btn-edit');
   btnEdit.setAttribute('aria-label', 'Editar tarefa');
   const imgEdit = document.createElement('img');
-  imgEdit.src = './src/assets/icons/edit.svg';
+  imgEdit.src = editIcon;
   imgEdit.alt = '';
   btnEdit.appendChild(imgEdit);
 
@@ -68,7 +70,7 @@ export function createTaskItem(task) {
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('aria-label', 'Excluir tarefa');
   const imgDelete = document.createElement('img');
-  imgDelete.src = './src/assets/icons/delete.svg';
+  imgDelete.src = deleteIcon;
   imgDelete.alt = '';
   btnDelete.appendChild(imgDelete);
 
@@ -81,5 +83,6 @@ export function createTaskItem(task) {
 
   initTaskActions(li, task);
   initDragDrop(li, task.id);
+
   return li;
 }
