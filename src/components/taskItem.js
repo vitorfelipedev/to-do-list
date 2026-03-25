@@ -59,7 +59,7 @@ export function createTaskItem(task) {
   btnEdit.classList.add('btn-edit');
   btnEdit.setAttribute('aria-label', 'Editar tarefa');
   const imgEdit = document.createElement('img');
-  imgEdit.src = '../src/assets/icons/edit.svg';
+  imgEdit.src = './src/assets/icons/edit.svg';
   imgEdit.alt = '';
   btnEdit.appendChild(imgEdit);
 
@@ -68,7 +68,7 @@ export function createTaskItem(task) {
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('aria-label', 'Excluir tarefa');
   const imgDelete = document.createElement('img');
-  imgDelete.src = '../src/assets/icons/delete.svg';
+  imgDelete.src = './src/assets/icons/delete.svg';
   imgDelete.alt = '';
   btnDelete.appendChild(imgDelete);
 
