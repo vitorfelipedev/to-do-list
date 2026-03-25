@@ -76,3 +76,11 @@
   color: var(--color-danger);
   margin-top: var(--space-1);
 }
+
+/* No form.css */
+.form-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+  display: block;
+}
