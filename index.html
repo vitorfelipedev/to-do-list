@@ -38,16 +38,22 @@
         </div>
         <!-- Categoria e data -->
         <div class="form-row">
-          <label for="new-task-category" class="sr-only">Categoria</label>
-          <select name="new-task-category" id="new-task-category">
-            <option value="personal">Pessoal</option>
-            <option value="work">Trabalho</option>
-            <option value="health">Saúde</option>
-            <option value="study">Estudos</option>
-            <option value="finance">Finanças</option>
-          </select>
-          <label for="new-task-date" class="form-label">Data de vencimento</label>
-          <input type="date" name="new-task-date" id="new-task-date">
+          <div class="form-field">
+            <label for="new-task-category" class="form-label">Categoria</label>
+            <select name="new-task-category" id="new-task-category">
+              <option value="personal">Pessoal</option>
+              <option value="work">Trabalho</option>
+              <option value="health">Saúde</option>
+              <option value="study">Estudos</option>
+              <option value="finance">Finanças</option>
+            </select>
+          </div>
+
+
+          <div class="form-field">
+            <label for="new-task-date" class="form-label">Data de vencimento</label>
+            <input type="date" name="new-task-date" id="new-task-date">
+          </div>
         </div>
       </form>
     </section>
