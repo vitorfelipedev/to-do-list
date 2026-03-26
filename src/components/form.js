@@ -1,6 +1,5 @@
 import createTask from '../models/task.js';
 import { getTasks, saveTasks } from '../services/storage.js';
-import { initFilters } from './filters.js';
 import { createTaskList } from './taskList.js';
 
 export function initForm() {
