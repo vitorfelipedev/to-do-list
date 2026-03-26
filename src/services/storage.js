@@ -10,8 +10,8 @@ export function getTasks() {
   }
 }
 export function saveTasks(tasks) {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
 }
 export function clearTasks() {
-  localStorage.removeItem('tasks');
+  localStorage.removeItem(TASKS_KEY);
 }
